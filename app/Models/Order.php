@@ -5,7 +5,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable=['user_id','order_number','sub_total','quantity','delivery_charge','status','total_amount','first_name','last_name','country','post_code','address1','address2','phone','email','payment_method','payment_status','shipping_id','coupon'];
+        protected $fillable = [
+        'order_number',
+        'user_id',
+        'address_id',
+        'sub_total',
+        'total_amount',
+        'quantity',
+        'payment_method',
+        'payment_status',
+        'status',
+        'first_name',
+        'last_name',
+        'email',
+        'phone'
+    ];
 
     public function cart_info(){
         return $this->hasMany('App\Models\Cart','order_id','id');
@@ -30,6 +44,14 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo('App\User', 'user_id');
+    }
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+    public function address()
+    {
+        return $this->belongsTo(Address::class, 'address_id');
     }
 
 }

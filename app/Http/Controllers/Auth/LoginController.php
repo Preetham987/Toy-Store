@@ -29,16 +29,23 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect('/admin'); // or route('home') if you have a named route
+    }
     /**
      * Create a new controller instance.
      *
      * @return void
      */
 
-    public function credentials(Request $request){
-        return ['email'=>$request->email,'password'=>$request->password,'status'=>'active','role'=>'admin'];
+    public function credentials(Request $request)
+    {
+        return [
+            'email' => $request->email,
+            'password' => $request->password,
+            'status' => 'active'
+        ];
     }
     public function __construct()
     {

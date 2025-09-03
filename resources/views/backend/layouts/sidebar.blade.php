@@ -37,13 +37,13 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-image"></i>
-        <span>Banners</span>
+        <span>Main Page Content</span>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Banner Options:</h6>
-          <a class="collapse-item" href="{{route('banner.index')}}">Banners</a>
-          <a class="collapse-item" href="{{route('banner.create')}}">Add Banners</a>
+          <a class="collapse-item" href="{{route('banner.index')}}">Current Content</a>
+          <a class="collapse-item" href="{{route('banner.create')}}">Add New Content</a>
         </div>
       </div>
     </li>
@@ -58,13 +58,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
           <i class="fas fa-sitemap"></i>
-          <span>Category</span>
+          <span>Department</span>
         </a>
         <div id="categoryCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category Options:</h6>
-            <a class="collapse-item" href="{{route('category.index')}}">Category</a>
-            <a class="collapse-item" href="{{route('category.create')}}">Add Category</a>
+            <h6 class="collapse-header">Department Options:</h6>
+            <a class="collapse-item" href="{{route('category.index')}}">Departments</a>
+            <a class="collapse-item" href="{{route('category.create')}}">Add Departments</a>
           </div>
         </div>
     </li>
@@ -84,13 +84,116 @@
         </div>
     </li>
 
+    {{-- Series --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#seriesCollapse" aria-expanded="true" aria-controls="seriesCollapse">
+          <i class="fas fa-layer-group"></i>
+          <span>Series</span>
+        </a>
+        <div id="seriesCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Series Options:</h6>
+            <a class="collapse-item" href="{{route('series.index')}}">Series</a>
+            <a class="collapse-item" href="{{route('series.create')}}">Add Series</a>
+          </div>
+        </div>
+    </li>
 
+        {{-- Product Type --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#producttypeCollapse" aria-expanded="true" aria-controls="producttypeCollapse">
+          <i class="fas fa-box-open"></i>
+          <span>Product Type</span>
+        </a>
+        <div id="producttypeCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Product Type Options:</h6>
+            <a class="collapse-item" href="{{route('producttype.index')}}">Product Type</a>
+            <a class="collapse-item" href="{{route('producttype.create')}}">Add Product Type</a>
+          </div>
+        </div>
+    </li>
+
+      {{-- Featured In --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#featuredinCollapse" aria-expanded="true" aria-controls="featuredinCollapse">
+          <i class="fas fa-star"></i>
+          <span>FeaturedIn</span>
+        </a>
+        <div id="featuredinCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">FeaturedIn Options:</h6>
+            <a class="collapse-item" href="{{route('featuredin.index')}}">FeaturedIn</a>
+            <a class="collapse-item" href="{{route('featuredin.create')}}">Add FeaturedIn</a>
+          </div>
+        </div>
+    </li>
+
+    {{-- Character --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#characterCollapse" aria-expanded="true" aria-controls="characterCollapse">
+          <i class="fas fa-user"></i>
+          <span>Character</span>
+        </a>
+        <div id="characterCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Character Options:</h6>
+            <a class="collapse-item" href="{{route('character.index')}}">Character</a>
+            <a class="collapse-item" href="{{route('character.create')}}">Add Character</a>
+          </div>
+        </div>
+    </li>
+
+    {{-- Company --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#companyCollapse" aria-expanded="true" aria-controls="companyCollapse">
+          <i class="fas fa-building"></i>
+          <span>Company</span>
+        </a>
+        <div id="companyCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Company Options:</h6>
+            <a class="collapse-item" href="{{route('company.index')}}">Company</a>
+            <a class="collapse-item" href="{{route('company.create')}}">Add Company</a>
+          </div>
+        </div>
+    </li>
+
+    {{-- Scale --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#scaleCollapse" aria-expanded="true" aria-controls="scaleCollapse">
+          <i class="fas fa-ruler-combined"></i>
+          <span>Scale</span>
+        </a>
+        <div id="scaleCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Scale Options:</h6>
+            <a class="collapse-item" href="{{route('scale.index')}}">Scale</a>
+            <a class="collapse-item" href="{{route('scale.create')}}">Add Scale</a>
+          </div>
+        </div>
+    </li>
+
+    {{-- Size --}}
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sizeCollapse" aria-expanded="true" aria-controls="sizeCollapse">
+          <i class="fas fa-expand-arrows-alt"></i>
+          <span>Size</span>
+        </a>
+        <div id="sizeCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Size Options:</h6>
+            <a class="collapse-item" href="{{route('size.index')}}">Size</a>
+            <a class="collapse-item" href="{{route('size.create')}}">Add Size</a>
+          </div>
+        </div>
+    </li>
 
     {{-- Products --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productCollapse" aria-expanded="true" aria-controls="productCollapse">
           <i class="fas fa-cubes"></i>
-          <span>Products</span>
+          <span>Product</span>
         </a>
         <div id="productCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -102,8 +205,8 @@
     </li>
 
   
-    {{-- Shipping --}}
-    <li class="nav-item">
+    <!-- {{-- Shipping --}} -->
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
           <i class="fas fa-truck"></i>
           <span>Shipping</span>
@@ -115,7 +218,7 @@
             <a class="collapse-item" href="{{route('shipping.create')}}">Add Shipping</a>
           </div>
         </div>
-    </li>
+    </li> -->
 
     <!--Orders -->
     <li class="nav-item">
@@ -126,22 +229,21 @@
     </li>
 
     <!-- Reviews -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('review.index')}}">
-            <i class="fas fa-comments"></i>
-            <span>Reviews</span></a>
-    </li>
+      <!-- <li class="nav-item">
+          <a class="nav-link" href="{{route('review.index')}}">
+              <i class="fas fa-comments"></i>
+              <span>Reviews</span></a>
+      </li> -->
     
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <!-- <hr class="sidebar-divider"> -->
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <!-- <div class="sidebar-heading">
       Posts
     </div>
 
-    <!-- Posts -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCollapse" aria-expanded="true" aria-controls="postCollapse">
         <i class="fas fa-fw fa-folder"></i>
@@ -156,7 +258,6 @@
       </div>
     </li>
 
-     <!-- Category -->
      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
           <i class="fas fa-sitemap fa-folder"></i>
@@ -171,7 +272,6 @@
         </div>
       </li>
 
-      <!-- Tags -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tagCollapse" aria-expanded="true" aria-controls="tagCollapse">
             <i class="fas fa-tags fa-folder"></i>
@@ -186,13 +286,12 @@
         </div>
     </li>
 
-      <!-- Comments -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('comment.index')}}">
             <i class="fas fa-comments fa-chart-area"></i>
             <span>Comments</span>
         </a>
-      </li>
+      </li> -->
 
 
     <!-- Divider -->
@@ -213,11 +312,11 @@
             <span>Users</span></a>
     </li>
      <!-- General settings -->
-     <li class="nav-item">
+     <!-- <li class="nav-item">
         <a class="nav-link" href="{{route('settings')}}">
             <i class="fas fa-cog"></i>
             <span>Settings</span></a>
-    </li>
+    </li> -->
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

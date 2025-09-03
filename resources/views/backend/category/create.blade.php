@@ -3,13 +3,13 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Category</h5>
+    <h5 class="card-header">Add Department</h5>
     <div class="card-body">
       <form method="post" action="{{route('category.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
-          <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{old('title')}}" class="form-control">
+          <label for="inputTitle" class="col-form-label">Department Title <span class="text-danger">*</span></label>
+          <input id="inputTitle" type="text" name="title" placeholder="Enter department title"  value="{{old('title')}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -23,11 +23,11 @@
           @enderror
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="is_parent">Is Parent</label><br>
           <input type="checkbox" name='is_parent' id='is_parent' value='1' checked> Yes                        
         </div>
-        {{-- {{$parent_cats}} --}}
+        {{-- {{$parent_cats}} --}} -->
 
         <div class="form-group d-none" id='parent_cat_div'>
           <label for="parent_id">Parent Category</label>

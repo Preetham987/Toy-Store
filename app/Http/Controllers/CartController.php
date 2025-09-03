@@ -1,18 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Wishlist;
 use App\Models\Cart;
 use Illuminate\Support\Str;
 use Helper;
+
+use App\Models\User;
+use App\Models\Address;
+use Illuminate\Support\Facades\Auth;
+
 class CartController extends Controller
 {
     protected $product=null;
     public function __construct(Product $product){
         $this->product=$product;
+    }
+
+    public function viewCart()
+    {
+        $cartItems = Cart::where('user_id', auth()->user()->id)
+                        ->whereNull('order_id')
+                        ->with('product') // eager load product details
+                        ->get();
+
+        return view('frontend.pages.cart', compact('cartItems'));
     }
 
     public function addToCart(Request $request){
@@ -230,26 +244,21 @@ class CartController extends Controller
     //     return redirect()->back()->with('success','Successfully remove item');
     // }
 
-    public function checkout(Request $request){
-        // $cart=session('cart');
-        // $cart_index=\Str::random(10);
-        // $sub_total=0;
-        // foreach($cart as $cart_item){
-        //     $sub_total+=$cart_item['amount'];
-        //     $data=array(
-        //         'cart_id'=>$cart_index,
-        //         'user_id'=>$request->user()->id,
-        //         'product_id'=>$cart_item['id'],
-        //         'quantity'=>$cart_item['quantity'],
-        //         'amount'=>$cart_item['amount'],
-        //         'status'=>'new',
-        //         'price'=>$cart_item['price'],
-        //     );
+    public function checkout()
+    {
+        $user = Auth::user();
 
-        //     $cart=new Cart();
-        //     $cart->fill($data);
-        //     $cart->save();
-        // }
-        return view('frontend.pages.checkout');
+        // Match by email instead of user_id
+        $addresses = Address::where('email', $user->email)->get();
+
+        // If no addresses, redirect to address-book
+        if ($addresses->isEmpty()) {
+            return redirect('/address-book')
+                ->with('error', 'Please add a delivery address before proceeding to checkout.');
+        }
+
+        $orderSuccess = session('order_success', false);
+
+        return view('frontend.pages.checkout', compact('user', 'addresses', 'orderSuccess'));
     }
 }

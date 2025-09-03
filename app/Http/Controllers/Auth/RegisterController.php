@@ -9,6 +9,10 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
+
 class RegisterController extends Controller
 {
     /*
@@ -41,6 +45,32 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    // Custom Added
+    public function register(){
+        return view('frontend.pages.register');
+    }
+    public function registerSubmit(Request $request){
+        // return $request->all();
+        $this->validate($request,[
+            'name'=>'string|required|min:2',
+            'email'=>'string|required|unique:users,email',
+            'password'=>'required|min:6|confirmed',
+        ]);
+        $data=$request->all();
+        // dd($data);
+        $check=$this->create($data);
+        Session::put('user',$data['email']);
+        if($check){
+            request()->session()->flash('success','Successfully registered');
+            return redirect()->route('home');
+        }
+        else{
+            request()->session()->flash('error','Please try again!');
+            return back();
+        }
+    }
+    // Custom Added End
+    
     /**
      * Get a validator for an incoming registration request.
      *

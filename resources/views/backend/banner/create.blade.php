@@ -5,7 +5,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Banner</h5>
+    <h5 class="card-header">Add Main Content</h5>
     <div class="card-body">
       <form method="post" action="{{route('banner.store')}}">
         {{csrf_field()}}
@@ -17,13 +17,13 @@
         @enderror
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="inputDesc" class="col-form-label">Description</label>
           <textarea class="form-control" id="description" name="description">{{old('description')}}</textarea>
           @error('description')
           <span class="text-danger">{{$message}}</span>
           @enderror
-        </div>
+        </div> -->
 
         <div class="form-group">
         <label for="inputPhoto" class="col-form-label">Photo <span class="text-danger">*</span></label>
@@ -41,7 +41,7 @@
           @enderror
         </div>
         
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
               <option value="active">Active</option>
@@ -50,7 +50,7 @@
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
-        </div>
+        </div> -->
         <div class="form-group mb-3">
           <button type="reset" class="btn btn-warning">Reset</button>
            <button class="btn btn-success" type="submit">Submit</button>

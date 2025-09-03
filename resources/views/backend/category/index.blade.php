@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Category Lists</h6>
-      <a href="{{route('category.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Category</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Department Lists</h6>
+      <a href="{{route('category.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Department</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -20,9 +20,9 @@
             <tr>
               <th>S.N.</th>
               <th>Title</th>
-              <th>Slug</th>
+              <!-- <th>Slug</th>
               <th>Is Parent</th>
-              <th>Parent Category</th>
+              <th>Parent Category</th> -->
               <th>Photo</th>
               <th>Status</th>
               <th>Action</th>
@@ -32,9 +32,9 @@
             <tr>
               <th>S.N.</th>
               <th>Title</th>
-              <th>Slug</th>
+              <!-- <th>Slug</th>
               <th>Is Parent</th>
-              <th>Parent Category</th>
+              <th>Parent Category</th> -->
               <th>Photo</th>
               <th>Status</th>
               <th>Action</th>
@@ -48,11 +48,11 @@
                 <tr>
                     <td>{{$category->id}}</td>
                     <td>{{$category->title}}</td>
-                    <td>{{$category->slug}}</td>
+                    <!-- <td>{{$category->slug}}</td>
                     <td>{{(($category->is_parent==1)? 'Yes': 'No')}}</td>
                     <td>
                         {{$category->parent_info->title ?? ''}}
-                    </td>
+                    </td> -->
                     <td>
                         @if($category->photo)
                             <img src="{{$category->photo}}" class="img-fluid" style="max-width:80px" alt="{{$category->photo}}">
@@ -81,7 +81,7 @@
         </table>
         <span style="float:right">{{$categories->links()}}</span>
         @else
-          <h6 class="text-center">No Categories found!!! Please create Category</h6>
+          <h6 class="text-center">No Departments found!!! Please create Department</h6>
         @endif
       </div>
     </div>

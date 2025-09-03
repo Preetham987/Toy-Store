@@ -4,7 +4,7 @@
 
 @section('main-content')
 <div class="card">
-<h5 class="card-header">Order       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Order<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
   </h5>
   <div class="card-body">
     @if($order)
@@ -16,7 +16,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Quantity</th>
-            <th>Charge</th>
+            <!-- <th>Charge</th> -->
             <th>Total Amount</th>
             <th>Status</th>
             <th>Action</th>
@@ -29,8 +29,8 @@
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
-            <td>${{$order->shipping->price}}</td>
-            <td>${{number_format($order->total_amount,2)}}</td>
+            <!-- <td>${{ optional($order->shipping)->price ?? '0.00' }}</td> -->
+            <td>Rs.{{number_format($order->total_amount,2)}}</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -79,16 +79,8 @@
                         <td> : {{$order->status}}</td>
                     </tr>
                     <tr>
-                        <td>Shipping Charge</td>
-                        <td> : $ {{$order->shipping->price}}</td>
-                    </tr>
-                    <tr>
-                      <td>Coupon</td>
-                      <td> : $ {{number_format($order->coupon,2)}}</td>
-                    </tr>
-                    <tr>
                         <td>Total Amount</td>
-                        <td> : $ {{number_format($order->total_amount,2)}}</td>
+                        <td> : Rs. {{number_format($order->total_amount,2)}}</td>
                     </tr>
                     <tr>
                         <td>Payment Method</td>
@@ -120,19 +112,51 @@
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td> : {{$order->address1}}, {{$order->address2}}</td>
+                        <td> : {{ $order->address->address_line1 ?? '' }}, {{ $order->address->address_line2 ?? '' }}</td>
                     </tr>
                     <tr>
-                        <td>Country</td>
-                        <td> : {{$order->country}}</td>
+                        <td>City, State</td>
+                        <td> : {{ $order->address->city ?? '' }}, {{ $order->address->state ?? '' }}</td>
                     </tr>
                     <tr>
-                        <td>Post Code</td>
-                        <td> : {{$order->post_code}}</td>
+                        <td>Pin Code</td>
+                        <td> : {{ $order->address->zip_code ?? '' }}</td>
                     </tr>
               </table>
             </div>
           </div>
+          {{-- Products Ordered --}}
+<div class="card mt-4">
+    <h5 class="card-header">Products Ordered</h5>
+    <div class="card-body">
+        @if($order->orderItems && $order->orderItems->count() > 0)
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($order->orderItems as $index => $item)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $item->product->title ?? 'N/A' }}</td>
+                            <td>Rs.{{ number_format($item->price, 2) }}</td>
+                            <td>{{ $item->quantity }}</td>
+                            <td>Rs.{{ number_format($item->price * $item->quantity, 2) }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>No products found for this order.</p>
+        @endif
+    </div>
+</div>
         </div>
       </div>
     </section>

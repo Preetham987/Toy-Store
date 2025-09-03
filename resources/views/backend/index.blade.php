@@ -11,13 +11,13 @@
     <!-- Content Row -->
     <div class="row">
 
-      <!-- Category -->
+      <!-- Department -->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Category</div>
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Departments</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Category::countActiveCategory()}}</div>
               </div>
               <div class="col-auto">
@@ -28,13 +28,157 @@
         </div>
       </div>
 
-      <!-- Products -->
+      <!--Brands-->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Brands</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Brand::countActiveBrand()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-folder fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Series-->
       <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Products</div>
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Series</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Series::countActiveSeries()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-layer-group fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Type -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Product Type</div>
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Models\ProductType::countActiveProductType()}}</div>
+                  </div>  
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-box-open fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FeaturedIn -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">FeaturedIn</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\FeaturedIn::countActiveFeaturedIn()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-star fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Character-->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Character</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Character::countActiveCharacter()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-user fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Company-->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Company</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Company::countActiveCompany()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-building fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Scale-->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Scale</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Scale::countActiveScale()}}</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-ruler-combined fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Size-->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Size</div>
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Models\Size::countActiveSize()}}</div>
+                  </div>  
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-expand-arrows-alt fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Products</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Product::countActiveProduct()}}</div>
               </div>
               <div class="col-auto">
@@ -47,16 +191,15 @@
 
       <!-- Order -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
+        <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Order</div>
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Order</div>
                 <div class="row no-gutters align-items-center">
                   <div class="col-auto">
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Models\Order::countActiveOrder()}}</div>
                   </div>
-                  
                 </div>
               </div>
               <div class="col-auto">
@@ -67,22 +210,6 @@
         </div>
       </div>
 
-      <!--Posts-->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Post</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">{{\App\Models\Post::countActivePost()}}</div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-folder fa-2x text-gray-300"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="row">
 
@@ -230,7 +357,7 @@
                           padding: 10,
                           // Include a dollar sign in the ticks
                           callback: function(value, index, values) {
-                            return '$' + number_format(value);
+                            return 'Rs.' + number_format(value);
                           }
                         },
                         gridLines: {
@@ -262,7 +389,7 @@
                       callbacks: {
                         label: function(tooltipItem, chart) {
                           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+                          return datasetLabel + ': Rs.' + number_format(tooltipItem.yLabel);
                         }
                       }
                     }

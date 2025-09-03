@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category = Category::create($validatedData);
 
         $message = $category
-            ? 'Category successfully added'
+            ? 'Department successfully added'
             : 'Error occurred, Please try again!';
 
         return redirect()->route('category.index')->with(
@@ -111,7 +111,7 @@ class CategoryController extends Controller
         $status = $category->update($validatedData);
 
         $message = $status
-            ? 'Category successfully updated'
+            ? 'Department successfully updated'
             : 'Error occurred, Please try again!';
 
         return redirect()->route('category.index')->with(
@@ -138,7 +138,7 @@ class CategoryController extends Controller
         }
 
         $message = $status
-            ? 'Category successfully deleted'
+            ? 'Department successfully deleted'
             : 'Error while deleting category';
 
         return redirect()->route('category.index')->with(
